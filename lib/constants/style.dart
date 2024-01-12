@@ -13,7 +13,16 @@ class AppStyles {
                       : 18,
           fontWeight: FontWeight.w600,
           color: color ?? AppColors.textColor);
-
+  static TextStyle extraBig(BuildContext context, {Color? color}) => TextStyle(
+      fontSize: Responsive.isSmallerPhone(context)
+          ? 24
+          : Responsive.isMobile(context)
+              ? 26
+              : Responsive.isTablet(context)
+                  ? 28
+                  : 30,
+      fontWeight: FontWeight.w700,
+      color: color ?? AppColors.textColor);
   static TextStyle bigText({required BuildContext context, Color? color}) =>
       TextStyle(
           fontSize: Responsive.isSmallerPhone(context)

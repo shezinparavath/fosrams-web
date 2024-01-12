@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/style.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/user_master/user_master_lap.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/user_master/user_master_mobile.dart';
 import 'package:fosrams_web/view/template/responsive/template_lap.dart';
 import 'package:fosrams_web/view/template/responsive/template_mobile.dart';
 
@@ -9,11 +11,11 @@ class TemplatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive.isSmallerPhone(context)
-        ? const TemplateMobile()
+        ? TemplateMobile(child: UserMasterMobile())
         : Responsive.isMobile(context)
-            ? const TemplateMobile()
+            ? TemplateMobile(child: UserMasterMobile())
             : Responsive.isTablet(context)
-                ? const TemplateLapAndTab()
-                : const TemplateLapAndTab();
+                ? TemplateLapAndTab(child: UserMasterLapAndTab())
+                : TemplateLapAndTab(child: UserMasterLapAndTab());
   }
 }

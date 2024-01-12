@@ -23,27 +23,25 @@ class TemplateCard extends StatelessWidget {
     return Card(
         color: const Color.fromARGB(255, 131, 185, 156),
         child: Consumer<TemplateController>(
-            builder: (context, value, _) => Column(
-                  children: [
-                    ListTile(
-                        onTap: () {
-                          templateProvider.triggerDropDown(index);
-                        },
-                        minLeadingWidth: 20,
-                        leading: TemplateImages(image: image),
-                        title: Text(title,
-                            style: AppStyles.averageText(
-                                context: context,
-                                color: AppColors.lightGreyColor)),
-                        trailing: Icon(
-                            value.droppedDown(index) == false
-                                ? Icons.keyboard_arrow_down_rounded
-                                : Icons.keyboard_arrow_up_rounded,
-                            color: AppColors.greyColor)),
-                    templateProvider.droppedDown(index) != false
-                        ? child
-                        : const SizedBox(),
-                  ],
-                )));
+            builder: (context, value, _) => Column(children: [
+                  ListTile(
+                      onTap: () {
+                        templateProvider.triggerDropDown(index);
+                      },
+                      minLeadingWidth: 20,
+                      leading: TemplateImages(image: image),
+                      title: Text(title,
+                          style: AppStyles.averageText(
+                              context: context,
+                              color: AppColors.lightGreyColor)),
+                      trailing: Icon(
+                          value.droppedDown(index) == false
+                              ? Icons.keyboard_arrow_down_rounded
+                              : Icons.keyboard_arrow_up_rounded,
+                          color: AppColors.greyColor)),
+                  templateProvider.droppedDown(index) != false
+                      ? child
+                      : const SizedBox()
+                ])));
   }
 }

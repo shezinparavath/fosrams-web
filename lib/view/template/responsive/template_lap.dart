@@ -8,8 +8,8 @@ import 'package:fosrams_web/widgets/template_widgets/lap_widgets/template_cards.
 import 'package:provider/provider.dart';
 
 class TemplateLapAndTab extends StatelessWidget {
-  const TemplateLapAndTab({super.key});
-
+  const TemplateLapAndTab({super.key, required this.child});
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,9 @@ class TemplateLapAndTab extends StatelessWidget {
                       BuildDropDown(title: 'Timesheet Master')
                     ]))
               ]))),
-      Expanded(child: Container())
+      Expanded(
+          child:
+              Container(padding: const EdgeInsets.only(left: 20), child: child))
     ]));
   }
 }
