@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fosrams_web/controllers/date_controller.dart';
 import 'package:fosrams_web/controllers/template_controller.dart';
 import 'package:fosrams_web/controllers/textfield_controller.dart';
-import 'package:fosrams_web/view/user_authentication/login_page.dart';
+import 'package:fosrams_web/widgets/template_widgets/side_bar_navigation.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,7 +20,16 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => TemplateController()),
         ChangeNotifierProvider(create: (context) => TextFieldController())
       ],
-      child: MaterialApp(home: LoginPage(), debugShowCheckedModeBanner: false),
+      child: MaterialApp.router(
+          builder: (context, child) {
+            final textScaleFactor = MediaQuery.of(context).textScaleFactor;
+            return MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaleFactor: textScaleFactor),
+                child: child!);
+          },
+          routerConfig: SideBarNavigation.router,
+          debugShowCheckedModeBanner: false),
     );
   }
 }

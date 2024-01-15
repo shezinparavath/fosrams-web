@@ -5,7 +5,7 @@ import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/functions.dart';
 import 'package:fosrams_web/constants/style.dart';
 import 'package:fosrams_web/controllers/textfield_controller.dart';
-import 'package:fosrams_web/model/user_table_model.dart';
+import 'package:fosrams_web/model/master_model/user_table_model.dart';
 import 'package:fosrams_web/widgets/master_data_widgets/lap_widgets/table_user.dart';
 import 'package:fosrams_web/widgets/user_authentication_widgets/loginpage/textfield_widget.dart';
 import 'package:provider/provider.dart';

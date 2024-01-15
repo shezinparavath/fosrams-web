@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fosrams_web/constants/app_routes.dart';
 import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
@@ -32,11 +33,14 @@ class TemplateLapAndTab extends StatelessWidget {
                     title: 'Master Data',
                     index: 1,
                     child: Column(children: [
-                      BuildDropDown(title: 'User Master'),
+                      BuildDropDown(
+                          title: 'User Master', route: AppRoutes.masterUser),
                       SizedBox(height: 10),
-                      BuildDropDown(title: 'Employee Master'),
+                      BuildDropDown(
+                          title: 'Employee Master',
+                          route: AppRoutes.masterEmployee),
                       SizedBox(height: 10),
-                      BuildDropDown(title: 'Timesheet Master')
+                      BuildDropDown(title: 'Timesheet Master', route: '')
                     ]))
               ]))),
       Expanded(

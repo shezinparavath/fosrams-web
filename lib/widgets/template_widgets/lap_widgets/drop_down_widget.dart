@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
+import 'package:go_router/go_router.dart';
 
 class BuildDropDown extends StatelessWidget {
-  const BuildDropDown({super.key, required this.title});
+  const BuildDropDown({super.key, required this.title, required this.route});
   final String title;
+  final String route;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -29,7 +31,9 @@ class BuildDropDown extends StatelessWidget {
                             : 25),
             const SizedBox(width: 5),
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.go(route);
+                },
                 child: Text(title,
                     style: AppStyles.smallText(
                         context: context, color: AppColors.lightGreyColor)))

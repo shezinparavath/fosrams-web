@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fosrams_web/constants/app_routes.dart';
 import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/functions.dart';
 import 'package:fosrams_web/constants/style.dart';
-import 'package:fosrams_web/view/template/template.dart';
 import 'package:fosrams_web/widgets/user_authentication_widgets/loginpage/textfield_widget.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -72,17 +73,12 @@ class LoginPage extends StatelessWidget {
                                       : 361,
                           height: Responsive.isSmallerPhone(context) ? 40 : 50,
                           decoration: BoxDecoration(
-                            gradient: AppColors.gradient,
-                            borderRadius: BorderRadius.circular(5),
-                          ),
+                              gradient: AppColors.gradient,
+                              borderRadius: BorderRadius.circular(5)),
                           child: ElevatedButton(
                               onPressed: () {
                                 if (formkey.currentState!.validate()) {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const TemplatePage()));
+                                  context.go(AppRoutes.masterUser);
                                 }
                               },
                               style: ElevatedButton.styleFrom(

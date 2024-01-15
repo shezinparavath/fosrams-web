@@ -5,13 +5,13 @@ import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/functions.dart';
 import 'package:fosrams_web/constants/style.dart';
 import 'package:fosrams_web/controllers/textfield_controller.dart';
-import 'package:fosrams_web/model/master_model/user_table_model.dart';
-import 'package:fosrams_web/widgets/master_data_widgets/lap_widgets/table_user.dart';
+import 'package:fosrams_web/model/master_model/employee_table_model.dart';
+import 'package:fosrams_web/widgets/master_data_widgets/lap_widgets/table_employee.dart';
 import 'package:fosrams_web/widgets/user_authentication_widgets/loginpage/textfield_widget.dart';
 import 'package:provider/provider.dart';
 
-class UserMasterLapAndTab extends StatelessWidget {
-  UserMasterLapAndTab({super.key});
+class EmployeeMasterLapAndTab extends StatelessWidget {
+  EmployeeMasterLapAndTab({super.key});
   final formkey = GlobalKey<FormState>();
 
   @override
@@ -36,19 +36,22 @@ class UserMasterLapAndTab extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const Icon(Icons.add),
-                        Text('Add User',
+                        Text('Add Employee',
                             style: AppStyles.smallText(
                                 context: context, color: Colors.white))
                       ])))),
       SizedBox(height: getScreenHeight(context) * .04),
       Expanded(
           child: ListView.builder(
-              itemBuilder: (context, index) => BuildTableUser(
-                  name: userTableList[index].name,
-                  email: userTableList[index].email,
-                  number: userTableList[index].number,
-                  index: index),
-              itemCount: userTableList.length))
+              itemBuilder: (context, index) => BuildTableEmployee(
+                  name: employeeModelList[index].name,
+                  email: employeeModelList[index].email,
+                  number: employeeModelList[index].number,
+                  index: index,
+                  logInTime: employeeModelList[index].logInTime,
+                  logOutTime: employeeModelList[index].logOutTime,
+                  duration: employeeModelList[index].duration),
+              itemCount: employeeModelList.length))
     ]);
   }
 

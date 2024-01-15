@@ -10,36 +10,13 @@ import 'package:fosrams_web/widgets/master_data_widgets/lap_widgets/table_user.d
 import 'package:fosrams_web/widgets/user_authentication_widgets/loginpage/textfield_widget.dart';
 import 'package:provider/provider.dart';
 
-class UserMasterLapAndTab extends StatelessWidget {
-  UserMasterLapAndTab({super.key});
+class EmployeeMasterMobile extends StatelessWidget {
+  EmployeeMasterMobile({super.key});
   final formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      const SizedBox(height: 50),
-      Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-              margin: const EdgeInsets.only(right: 20),
-              height: Responsive.isTablet(context) ? 30 : 40,
-              width: Responsive.isTablet(context) ? 130 : 147,
-              decoration: BoxDecoration(
-                  gradient: AppColors.gradient,
-                  borderRadius: BorderRadius.circular(10)),
-              child: ElevatedButton(
-                  onPressed: () => bottomSheet(context),
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Icon(Icons.add),
-                        Text('Add User',
-                            style: AppStyles.smallText(
-                                context: context, color: Colors.white))
-                      ])))),
       SizedBox(height: getScreenHeight(context) * .04),
       Expanded(
           child: ListView.builder(
@@ -48,7 +25,15 @@ class UserMasterLapAndTab extends StatelessWidget {
                   email: userTableList[index].email,
                   number: userTableList[index].number,
                   index: index),
-              itemCount: userTableList.length))
+              itemCount: userTableList.length)),
+      Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Align(
+              alignment: Alignment.bottomRight,
+              child: FloatingActionButton(
+                  onPressed: () => bottomSheet(context),
+                  backgroundColor: AppColors.greenColor,
+                  child: const Icon(Icons.add))))
     ]);
   }
 
@@ -62,7 +47,7 @@ class UserMasterLapAndTab extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                      child: Text('Create User',
+                      child: Text('Create Employee',
                           textAlign: TextAlign.center,
                           style: AppStyles.bigText(context: context))),
                   FloatingActionButton(
