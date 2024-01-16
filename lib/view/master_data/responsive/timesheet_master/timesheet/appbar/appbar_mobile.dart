@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fosrams_web/constants/app_routes.dart';
 import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/style.dart';
+import 'package:go_router/go_router.dart';
 
 PreferredSizeWidget buildAppBarMobile(BuildContext context) {
   double preferredHeight = 0;
@@ -13,6 +15,9 @@ PreferredSizeWidget buildAppBarMobile(BuildContext context) {
   return PreferredSize(
       preferredSize: Size.fromHeight(preferredHeight),
       child: AppBar(
+          leading: IconButton(
+              onPressed: () => context.go(AppRoutes.masterTimesheet),
+              icon: const Icon(Icons.arrow_back_sharp)),
           titleSpacing: 0,
           iconTheme: const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,

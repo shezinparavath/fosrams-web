@@ -9,20 +9,20 @@ class TemplateMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const BuildDrawer(),
-      appBar: AppBar(
-          backgroundColor: AppColors.greenColor,
-          title: Text('Master Data',
-              style: AppStyles.bigText(context: context, color: Colors.white)),
-          actions: [
-            Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Center(
-                    child: Text('Welcome back\nAdmin',
-                        style: AppStyles.bigText(
-                            context: context, color: Colors.white))))
-          ]),
-      body: Container(child: child),
-    );
+        drawer: const BuildDrawer(),
+        appBar: AppBar(
+            backgroundColor: AppColors.greenColor,
+            title: Text('Master Data',
+                style:
+                    AppStyles.bigText(context: context, color: Colors.white)),
+            actions: [
+              Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Center(
+                      child: Text('Welcome back\nAdmin',
+                          style: AppStyles.bigText(
+                              context: context, color: Colors.white))))
+            ]),
+        body: Container(child: child));
   }
 }

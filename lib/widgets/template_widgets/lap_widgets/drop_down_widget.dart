@@ -32,7 +32,7 @@ class BuildDropDown extends StatelessWidget {
             const SizedBox(width: 5),
             TextButton(
                 onPressed: () {
-                  context.go(route);
+                  context.go(route, extra: {1: title});
                 },
                 child: Text(title,
                     style: AppStyles.smallText(

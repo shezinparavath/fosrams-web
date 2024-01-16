@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/assets.dart';
-import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
 
 PreferredSizeWidget buildAppBar(BuildContext context) {
@@ -35,25 +34,6 @@ PreferredSizeWidget buildAppBar(BuildContext context) {
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        TextButton(
-                            onPressed: () {},
-                            child: Text('Home',
-                                style: AppStyles.smallText(context: context))),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text('TimeSheet',
-                                style: AppStyles.smallText(
-                                    context: context,
-                                    color: AppColors.greenColor))),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text('Notification',
-                                style: AppStyles.smallText(context: context))),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text('My Account',
-                                style: AppStyles.smallText(context: context))),
-                        SizedBox(width: getScreenWidth(context) * .02),
                         CircleAvatar(
                             radius: getScreenWidth(context) * .02,
                             backgroundImage:

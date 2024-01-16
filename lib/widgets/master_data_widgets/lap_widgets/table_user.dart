@@ -19,10 +19,21 @@ class BuildTableUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.all(20),
+        padding: index == 0 ? null : const EdgeInsets.all(20),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color:
-                index % 2 == 0 ? AppColors.greyColor : AppColors.lightGreyColor,
+            border: index == 0
+                ? null
+                : Border.all(
+                    color: index % 2 == 0
+                        ? AppColors.greyColor2
+                        : AppColors.greyColor2),
+            boxShadow: index == 0 ? null : [AppColors.shadow],
+            color: index == 0
+                ? Colors.transparent
+                : index % 2 == 0
+                    ? AppColors.greyColor
+                    : AppColors.lightGreyColor,
             borderRadius: BorderRadius.circular(10)),
         child:
             Table(defaultColumnWidth: const FixedColumnWidth(100), children: [

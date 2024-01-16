@@ -18,7 +18,12 @@ class TemplateLapAndTab extends StatelessWidget {
       Consumer<TemplateController>(
           builder: (context, value, child) => Container(
               width: Responsive.isTablet(context) ? 200 : 250,
-              color: AppColors.darkGreen,
+              decoration: BoxDecoration(color: AppColors.darkGreen, boxShadow: [
+                BoxShadow(
+                    blurRadius: 10,
+                    offset: const Offset(4, -4),
+                    color: AppColors.textColor.withOpacity(.5))
+              ]),
               child: Column(children: [
                 const SizedBox(height: 20),
                 Image.asset(AppAssets.imgIcon, fit: BoxFit.contain),
@@ -40,7 +45,9 @@ class TemplateLapAndTab extends StatelessWidget {
                           title: 'Employee Master',
                           route: AppRoutes.masterEmployee),
                       SizedBox(height: 10),
-                      BuildDropDown(title: 'Timesheet Master', route: '')
+                      BuildDropDown(
+                          title: 'Timesheet Master',
+                          route: AppRoutes.masterTimesheet)
                     ]))
               ]))),
       Expanded(

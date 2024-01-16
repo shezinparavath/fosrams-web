@@ -31,7 +31,8 @@ class BuildDrawer extends StatelessWidget {
               BuildDropDown(
                   title: 'Employee Master', route: AppRoutes.masterEmployee),
               SizedBox(height: 10),
-              BuildDropDown(title: 'Timesheet Master', route: '')
+              BuildDropDown(
+                  title: 'Timesheet Master', route: AppRoutes.masterTimesheet)
             ]))
       ]));
 }
