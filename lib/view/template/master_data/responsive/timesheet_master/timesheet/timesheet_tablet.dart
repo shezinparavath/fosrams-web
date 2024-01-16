@@ -3,13 +3,13 @@ import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
 import 'package:fosrams_web/controllers/date_controller.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/timesheet_master/timesheet/appbar/appbar.dart';
 import 'package:fosrams_web/widgets/time_sheet_widgets/date_picker.dart';
 import 'package:fosrams_web/widgets/time_sheet_widgets/grid_view.dart';
-import 'package:fosrams_web/view/master_data/responsive/timesheet_master/timesheet/appbar/appbar.dart';
 import 'package:provider/provider.dart';
 
-class TimeSheetLap extends StatelessWidget {
-  const TimeSheetLap({super.key});
+class TimeSheetTablet extends StatelessWidget {
+  const TimeSheetTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +62,9 @@ class TimeSheetLap extends StatelessWidget {
                         shrinkWrap: true,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3,
+                                crossAxisCount: 2,
                                 mainAxisSpacing: 30,
+                                mainAxisExtent: 250,
                                 crossAxisSpacing: 30),
                         itemBuilder: (context, index) => const BuildGridView(),
                         itemCount: 20)
@@ -76,6 +77,7 @@ _dropDown(BuildContext context) {
   showDialog(
       context: context,
       builder: (context) => AlertDialog(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 100),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               actionsPadding: const EdgeInsets.symmetric(vertical: 20),
@@ -84,7 +86,7 @@ _dropDown(BuildContext context) {
                   style: AppStyles.bigText(context: context)),
               content: ConstrainedBox(
                   constraints:
-                      BoxConstraints(maxHeight: getScreenHeight(context) * .2),
+                      BoxConstraints(maxHeight: getScreenHeight(context) * .15),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -106,7 +108,7 @@ _dropDown(BuildContext context) {
               actionsAlignment: MainAxisAlignment.spaceEvenly,
               actions: [
                 Container(
-                    width: getScreenWidth(context) * .09,
+                    width: getScreenWidth(context) * .15,
                     height: getScreenHeight(context) * .06,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -118,7 +120,7 @@ _dropDown(BuildContext context) {
                             shadowColor: Colors.transparent),
                         child: const Text('Cancel'))),
                 Container(
-                    width: getScreenWidth(context) * .09,
+                    width: getScreenWidth(context) * .15,
                     height: getScreenHeight(context) * .06,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

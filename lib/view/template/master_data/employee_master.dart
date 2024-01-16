@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/style.dart';
-import 'package:fosrams_web/view/master_data/responsive/employee_master/employee_master_lap.dart';
-import 'package:fosrams_web/view/master_data/responsive/employee_master/employee_master_mobile.dart';
-import 'package:fosrams_web/view/master_data/responsive/employee_master/employee_master_tab.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/employee_master/employee_master_lap.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/employee_master/employee_master_mobile.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/employee_master/employee_master_tab.dart';
 
 class EmployeeMaster extends StatelessWidget {
   const EmployeeMaster({super.key, required this.title});

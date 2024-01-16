@@ -3,68 +3,72 @@ import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
 import 'package:fosrams_web/controllers/date_controller.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/timesheet_master/timesheet/appbar/appbar.dart';
 import 'package:fosrams_web/widgets/time_sheet_widgets/date_picker.dart';
 import 'package:fosrams_web/widgets/time_sheet_widgets/grid_view.dart';
-import 'package:fosrams_web/view/master_data/responsive/timesheet_master/timesheet/appbar/appbar_mobile.dart';
 import 'package:provider/provider.dart';
 
-class TimeSheetMobile extends StatelessWidget {
-  const TimeSheetMobile({super.key});
+class TimeSheetLap extends StatelessWidget {
+  const TimeSheetLap({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xffFCFCFC),
-        appBar: buildAppBarMobile(context),
+        appBar: buildAppBar(context),
         body: SingleChildScrollView(
-            child: Padding(
-                padding: EdgeInsets.all(getScreenWidth(context) * .05),
-                child: Column(children: [
-                  Text('My TimeSheet',
-                      style: AppStyles.bigText(
-                          context: context, color: AppColors.darkGreen)),
-                  const SizedBox(height: 50),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Your Previous Shifts',
-                            style: AppStyles.bigText(context: context)),
-                        Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                gradient: AppColors.gradient),
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  _dropDown(context);
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.transparent,
-                                    shadowColor: Colors.transparent),
-                                child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Icon(Icons.filter_alt,
-                                          color: Colors.black,
-                                          size: getScreenWidth(context) * .05),
-                                      Text('Filter',
-                                          style: AppStyles.smallText(
-                                              context: context))
-                                    ])))
-                      ]),
-                  const SizedBox(height: 20),
-                  GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1,
-                              mainAxisSpacing: 30,
-                              mainAxisExtent: 200,
-                              crossAxisSpacing: 30),
-                      itemBuilder: (context, index) => const BuildGridView(),
-                      itemCount: 20)
-                ]))));
+          child: Padding(
+              padding: EdgeInsets.all(getScreenWidth(context) * .05),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('My TimeSheet',
+                        style: AppStyles.bigText(
+                            context: context, color: AppColors.darkGreen)),
+                    const SizedBox(height: 50),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Your Previous Shifts',
+                              style: AppStyles.bigText(context: context)),
+                          Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: AppColors.gradient),
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    _dropDown(context);
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.transparent,
+                                      shadowColor: Colors.transparent),
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Icon(Icons.filter_alt,
+                                            color: Colors.black,
+                                            size:
+                                                getScreenWidth(context) * .02),
+                                        Text('Filter',
+                                            style: AppStyles.smallText(
+                                                context: context))
+                                      ])))
+                        ]),
+                    const SizedBox(height: 20),
+                    GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                mainAxisSpacing: 30,
+                                crossAxisSpacing: 30),
+                        itemBuilder: (context, index) => const BuildGridView(),
+                        itemCount: 20)
+                  ])),
+        ));
   }
 }
 
@@ -80,7 +84,7 @@ _dropDown(BuildContext context) {
                   style: AppStyles.bigText(context: context)),
               content: ConstrainedBox(
                   constraints:
-                      BoxConstraints(maxHeight: getScreenHeight(context) * .15),
+                      BoxConstraints(maxHeight: getScreenHeight(context) * .2),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -102,7 +106,7 @@ _dropDown(BuildContext context) {
               actionsAlignment: MainAxisAlignment.spaceEvenly,
               actions: [
                 Container(
-                    width: getScreenWidth(context) * .3,
+                    width: getScreenWidth(context) * .09,
                     height: getScreenHeight(context) * .06,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -114,7 +118,7 @@ _dropDown(BuildContext context) {
                             shadowColor: Colors.transparent),
                         child: const Text('Cancel'))),
                 Container(
-                    width: getScreenWidth(context) * .3,
+                    width: getScreenWidth(context) * .09,
                     height: getScreenHeight(context) * .06,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

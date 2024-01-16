@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/app_routes.dart';
-import 'package:fosrams_web/view/master_data/employee_master.dart';
-import 'package:fosrams_web/view/master_data/responsive/timesheet_master/timesheet.dart';
-import 'package:fosrams_web/view/master_data/timesheet_master.dart';
-import 'package:fosrams_web/view/master_data/user_master.dart';
+import 'package:fosrams_web/view/template/master_data/employee_master.dart';
+import 'package:fosrams_web/view/template/master_data/responsive/timesheet_master/timesheet.dart';
+import 'package:fosrams_web/view/template/master_data/timesheet_master.dart';
+import 'package:fosrams_web/view/template/master_data/user_master.dart';
 import 'package:fosrams_web/view/template/template.dart';
 import 'package:fosrams_web/view/user_authentication/login_page.dart';
 import 'package:go_router/go_router.dart';
