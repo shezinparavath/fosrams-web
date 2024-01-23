@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/colors.dart';
-import 'package:fosrams_web/constants/decoration.dart';
 import 'package:fosrams_web/constants/style.dart';
 
-class BuildTableEmployeeLap extends StatelessWidget {
-  const BuildTableEmployeeLap(
+class BuildTableEmployee extends StatelessWidget {
+  const BuildTableEmployee(
       {Key? key,
       required this.name,
       required this.email,
@@ -26,19 +25,13 @@ class BuildTableEmployeeLap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: index == 0 ? null : const EdgeInsets.all(10),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-            border: index == 0 ? null : Border.all(color: AppColors.greyColor2),
-            boxShadow: index == 0 ? null : [AppDecoration.shadow],
-            color: index == 0
-                ? Colors.transparent
-                : index % 2 == 0
-                    ? AppColors.greyColor
-                    : AppColors.lightGreyColor,
+            color:
+                index % 2 == 0 ? AppColors.greyColor : AppColors.lightGreyColor,
             borderRadius: BorderRadius.circular(10)),
         child:
-            Table(defaultColumnWidth: const FixedColumnWidth(200), children: [
+            Table(defaultColumnWidth: const FixedColumnWidth(100), children: [
           TableRow(children: [
             TableCell(
                 child: Text(name,

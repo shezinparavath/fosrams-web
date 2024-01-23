@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/controllers/date_controller.dart';
-import 'package:fosrams_web/controllers/drop_down_buttons_controller.dart';
 import 'package:fosrams_web/controllers/template_controller.dart';
 import 'package:fosrams_web/controllers/textfield_controller.dart';
 import 'package:fosrams_web/widgets/template_widgets/side_bar_navigation.dart';
@@ -17,7 +16,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => DropDownButtonsProviders()),
         ChangeNotifierProvider(create: (context) => DateProviders()),
         ChangeNotifierProvider(create: (context) => TemplateController()),
         ChangeNotifierProvider(create: (context) => TextFieldController())

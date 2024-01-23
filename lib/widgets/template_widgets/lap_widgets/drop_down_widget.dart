@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
-import 'package:fosrams_web/controllers/drop_down_buttons_controller.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 class BuildDropDown extends StatelessWidget {
-  const BuildDropDown(
-      {super.key,
-      required this.title,
-      required this.route,
-      required this.index});
+  const BuildDropDown({super.key, required this.title, required this.route});
   final String title;
   final String route;
-  final int index;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -27,25 +20,23 @@ class BuildDropDown extends StatelessWidget {
                           ? 50
                           : 60),
           child: Row(children: [
-            Consumer<DropDownButtonsProviders>(
-                builder: (context, value, child) => value.onTapResponse(index)
-                    ? Container(height: 20, width: 5, color: AppColors.tealClr)
-                    : const SizedBox()),
+            Icon(Icons.subdirectory_arrow_right_rounded,
+                color: AppColors.lightGreyColor,
+                size: Responsive.isSmallerPhone(context)
+                    ? 10
+                    : Responsive.isMobile(context)
+                        ? 15
+                        : Responsive.isTablet(context)
+                            ? 20
+                            : 25),
             const SizedBox(width: 5),
             TextButton(
                 onPressed: () {
-                  Provider.of<DropDownButtonsProviders>(context, listen: false)
-                      .triggerButton = index;
-                  context.go(route, extra: {1: title});
+                  context.go(route);
                 },
-                child: Consumer<DropDownButtonsProviders>(
-                    builder: (context, value, child) => Text(title,
-                        style: value.onTapResponse(index)
-                            ? AppStyles.averageText(
-                                context: context,
-                                color: AppColors.lightGreyColor)
-                            : AppStyles.smallText(
-                                context: context, color: AppColors.greyColor))))
+                child: Text(title,
+                    style: AppStyles.smallText(
+                        context: context, color: AppColors.lightGreyColor)))
           ]))
     ]);
   }

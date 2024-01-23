@@ -37,30 +37,31 @@ class DatePickerWidget extends StatelessWidget {
                           ? 200
                           : 220,
                   child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                                date == '1'
-                                    ? value.getfromDate()
-                                    : value.gettoDate(),
-                                style: AppStyles.smallText(context: context)),
-                            Image.asset(AppIcons.iconCalendar,
-                                width: Responsive.isSmallerPhone(context)
-                                    ? 14
-                                    : Responsive.isMobile(context)
-                                        ? 16
-                                        : Responsive.isTablet(context)
-                                            ? 20
-                                            : 25,
-                                height: Responsive.isMobile(context)
-                                    ? 16
-                                    : Responsive.isTablet(context)
-                                        ? 20
-                                        : 25,
-                                color: AppColors.greenColor)
-                          ])))))
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                              date == '1'
+                                  ? value.getfromDate()
+                                  : value.gettoDate(),
+                              style: AppStyles.smallText(context: context)),
+                          Image.asset(AppAssets.iconCalendar,
+                              width: Responsive.isSmallerPhone(context)
+                                  ? 14
+                                  : Responsive.isMobile(context)
+                                      ? 16
+                                      : Responsive.isTablet(context)
+                                          ? 20
+                                          : 25,
+                              height: Responsive.isMobile(context)
+                                  ? 16
+                                  : Responsive.isTablet(context)
+                                      ? 20
+                                      : 25,
+                              color: AppColors.greenColor)
+                        ]),
+                  ))))
     ]);
   }
 }

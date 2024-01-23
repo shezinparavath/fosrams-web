@@ -9,7 +9,7 @@ class UserMaster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive.isDesktop(context) || Responsive.isTablet(context)
-        ? const UserMasterLapAndTab()
-        : const UserMasterMobile();
+        ? UserMasterLapAndTab()
+        : UserMasterMobile();
   }
 }

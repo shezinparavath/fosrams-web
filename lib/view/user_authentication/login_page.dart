@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Image.asset(AppImages.imgIcon,
+                      Image.asset(AppAssets.imgIcon,
                           fit: BoxFit.fill,
                           width: Responsive.isSmallerPhone(context)
                               ? 60
