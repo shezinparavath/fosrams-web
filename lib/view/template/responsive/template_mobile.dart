@@ -23,6 +23,9 @@ class TemplateMobile extends StatelessWidget {
                           style: AppStyles.bigText(
                               context: context, color: Colors.white))))
             ]),
-        body: Container(child: child));
+        body: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            color: AppColors.backGroundClr,
+            child: child));
   }
 }

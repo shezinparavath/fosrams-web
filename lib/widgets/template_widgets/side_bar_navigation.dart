@@ -20,35 +20,29 @@ class SideBarNavigation {
             builder: (context, state) => LoginPage()),
         ShellRoute(
             navigatorKey: _shellNavigatorKey,
-            builder: (context, state, child) => TemplatePage(child: child),
+            builder: (context, state, child) {
+              final title = state.extra is Map<int, dynamic>
+                  ? (state.extra as Map<int, dynamic>)[1]
+                  : 'Master Data';
+              return TemplatePage(title: title, child: child);
+            },
             routes: [
               GoRoute(
                   path: AppRoutes.masterUser,
                   parentNavigatorKey: _shellNavigatorKey,
                   builder: (context, state) {
-                    final title = state.extra is Map<int, dynamic>
-                        ? (state.extra as Map<int, dynamic>)[1]
-                        : 'Master User';
-                    return UserMaster(title: title);
+                    return const UserMaster();
                   }),
               GoRoute(
                   path: AppRoutes.masterEmployee,
                   parentNavigatorKey: _shellNavigatorKey,
                   builder: (context, state) {
-                    final title = state.extra is Map<int, dynamic>
-                        ? (state.extra as Map<int, dynamic>)[1]
-                        : 'Master User';
-                    return EmployeeMaster(title: title);
+                    return const EmployeeMaster();
                   }),
               GoRoute(
                   path: AppRoutes.masterTimesheet,
                   parentNavigatorKey: _shellNavigatorKey,
-                  builder: (context, state) {
-                    final title = state.extra is Map<int, dynamic>
-                        ? (state.extra as Map<int, dynamic>)[1]
-                        : 'Master Data';
-                    return TimeSheetMaster(title: title);
-                  })
+                  builder: (context, state) => const TimeSheetMaster())
             ]),
         GoRoute(
             path: AppRoutes.timeSheet,

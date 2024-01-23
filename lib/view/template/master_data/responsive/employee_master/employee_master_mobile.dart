@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
+import 'package:fosrams_web/constants/decoration.dart';
 import 'package:fosrams_web/constants/functions.dart';
 import 'package:fosrams_web/controllers/textfield_controller.dart';
 import 'package:fosrams_web/model/master_model/employee_table_model.dart';
-import 'package:fosrams_web/widgets/master_data_widgets/lap_widgets/table_employee.dart';
-import 'package:fosrams_web/widgets/template_widgets/pop_up.dart';
+import 'package:fosrams_web/widgets/master_data_widgets/mobile_widgets/table_employee.dart';
+import 'package:fosrams_web/widgets/master_data_widgets/create_master_dat_pop_up.dart';
 import 'package:fosrams_web/widgets/user_authentication_widgets/loginpage/textfield_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -17,12 +18,17 @@ class EmployeeMasterMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(height: getScreenHeight(context) * .04),
-      Expanded(
+      Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              boxShadow: [AppDecoration.smallShadow],
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20)),
           child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Column(children: [
                 for (int index = 0; index < employeeModelList.length; index++)
-                  BuildTableEmployee(
+                  BuildTableEmployeeMobile(
                       name: employeeModelList[index].name,
                       email: employeeModelList[index].email,
                       number: employeeModelList[index].number,
@@ -31,19 +37,21 @@ class EmployeeMasterMobile extends StatelessWidget {
                       logOutTime: employeeModelList[index].logOutTime,
                       duration: employeeModelList[index].duration)
               ]))),
-      Align(
-          alignment: Alignment.bottomRight,
-          child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FloatingActionButton(
-                  onPressed: () => bottomSheet(context),
-                  backgroundColor: AppColors.greenColor,
-                  child: const Icon(Icons.add))))
+      Expanded(
+        child: Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FloatingActionButton(
+                    onPressed: () => bottomSheet(context),
+                    backgroundColor: AppColors.greenColor,
+                    child: const Icon(Icons.add)))),
+      )
     ]);
   }
 
   bottomSheet(BuildContext context) {
-    buildShowDialog(
+    buildCreateMasterDataShowDialog(
         context: context,
         title: 'Create Employee',
         child:

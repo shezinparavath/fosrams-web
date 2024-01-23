@@ -19,7 +19,7 @@ PreferredSizeWidget buildAppBar(BuildContext context) {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Center(
-                      child: Image.asset(AppAssets.imgIcon,
+                      child: Image.asset(AppImages.imgIcon,
                           fit: BoxFit.contain,
                           width: Responsive.isMobile(context)
                               ? 70
@@ -37,7 +37,7 @@ PreferredSizeWidget buildAppBar(BuildContext context) {
                         CircleAvatar(
                             radius: getScreenWidth(context) * .02,
                             backgroundImage:
-                                const AssetImage(AppAssets.imgProfile)),
+                                const AssetImage(AppImages.imgProfile)),
                         const SizedBox(width: 10),
                         Text('Kalyan Bajwa',
                             style: AppStyles.bigText(context: context))

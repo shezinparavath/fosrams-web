@@ -5,8 +5,8 @@ import 'package:fosrams_web/constants/decoration.dart';
 import 'package:fosrams_web/constants/style.dart';
 import 'package:go_router/go_router.dart';
 
-class BuildTableTimeSheetLap extends StatelessWidget {
-  const BuildTableTimeSheetLap(
+class BuildTableTimeSheetMobile extends StatelessWidget {
+  const BuildTableTimeSheetMobile(
       {Key? key,
       required this.name,
       required this.email,
@@ -50,7 +50,7 @@ class BuildTableTimeSheetLap extends StatelessWidget {
                   ? const FixedColumnWidth(90)
                   : Responsive.isTablet(context)
                       ? const FixedColumnWidth(110)
-                      : const FixedColumnWidth(40),
+                      : const FixedColumnWidth(90),
         }, children: [
           TableRow(children: [
             TableCell(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fosrams_web/constants/colors.dart';
+import 'package:fosrams_web/constants/decoration.dart';
 import 'package:fosrams_web/constants/style.dart';
 
-class BuildTableUser extends StatelessWidget {
-  const BuildTableUser({
+class BuildTableUserLap extends StatelessWidget {
+  const BuildTableUserLap({
     Key? key,
     required this.name,
     required this.email,
@@ -19,8 +20,8 @@ class BuildTableUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: index == 0 ? null : const EdgeInsets.all(20),
-        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
+        margin: index == 0 ? EdgeInsets.zero : const EdgeInsets.all(10),
         decoration: BoxDecoration(
             border: index == 0
                 ? null
@@ -28,7 +29,7 @@ class BuildTableUser extends StatelessWidget {
                     color: index % 2 == 0
                         ? AppColors.greyColor2
                         : AppColors.greyColor2),
-            boxShadow: index == 0 ? null : [AppColors.shadow],
+            boxShadow: index == 0 ? null : [AppDecoration.shadow],
             color: index == 0
                 ? Colors.transparent
                 : index % 2 == 0

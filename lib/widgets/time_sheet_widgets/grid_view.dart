@@ -47,7 +47,7 @@ class BuildGridView extends StatelessWidget {
                                     shape: BoxShape.circle,
                                     color: AppColors.greenColor),
                                 child: Center(
-                                    child: Image.asset(AppAssets.iconCalendar,
+                                    child: Image.asset(AppIcons.iconCalendar,
                                         width: Responsive.isSmallerPhone(
                                                 context)
                                             ? 10
@@ -118,7 +118,7 @@ class BuildGridView extends StatelessWidget {
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Image.asset(AppAssets.iconHourGlass,
+                        Image.asset(AppIcons.iconHourGlass,
                             color: const Color(0xff35BFEB),
                             width: Responsive.isSmallerPhone(context)
                                 ? 10

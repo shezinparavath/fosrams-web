@@ -3,8 +3,8 @@ import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/decoration.dart';
 import 'package:fosrams_web/constants/style.dart';
 
-class BuildTableEmployeeLap extends StatelessWidget {
-  const BuildTableEmployeeLap(
+class BuildTableEmployeeMobile extends StatelessWidget {
+  const BuildTableEmployeeMobile(
       {Key? key,
       required this.name,
       required this.email,
@@ -29,7 +29,12 @@ class BuildTableEmployeeLap extends StatelessWidget {
         margin: index == 0 ? null : const EdgeInsets.all(10),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-            border: index == 0 ? null : Border.all(color: AppColors.greyColor2),
+            border: index == 0
+                ? null
+                : Border.all(
+                    color: index % 2 == 0
+                        ? AppColors.greyColor2
+                        : AppColors.greyColor2),
             boxShadow: index == 0 ? null : [AppDecoration.shadow],
             color: index == 0
                 ? Colors.transparent
@@ -37,8 +42,14 @@ class BuildTableEmployeeLap extends StatelessWidget {
                     ? AppColors.greyColor
                     : AppColors.lightGreyColor,
             borderRadius: BorderRadius.circular(10)),
-        child:
-            Table(defaultColumnWidth: const FixedColumnWidth(200), children: [
+        child: Table(columnWidths: const {
+          0: FixedColumnWidth(200),
+          1: FixedColumnWidth(200),
+          2: FixedColumnWidth(150),
+          3: FixedColumnWidth(100),
+          4: FixedColumnWidth(100),
+          5: FixedColumnWidth(100)
+        }, children: [
           TableRow(children: [
             TableCell(
                 child: Text(name,

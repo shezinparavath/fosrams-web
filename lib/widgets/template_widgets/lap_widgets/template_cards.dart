@@ -39,9 +39,7 @@ class TemplateCard extends StatelessWidget {
                               ? Icons.keyboard_arrow_down_rounded
                               : Icons.keyboard_arrow_up_rounded,
                           color: AppColors.greyColor)),
-                  templateProvider.droppedDown(index) != false
-                      ? child
-                      : const SizedBox()
+                  templateProvider.droppedDown(index) ? child : const SizedBox()
                 ])));
   }
 }

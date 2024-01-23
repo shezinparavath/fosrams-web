@@ -5,14 +5,14 @@ import 'package:fosrams_web/view/template/master_data/responsive/employee_master
 import 'package:fosrams_web/view/template/master_data/responsive/employee_master/employee_master_tab.dart';
 
 class EmployeeMaster extends StatelessWidget {
-  const EmployeeMaster({super.key, required this.title});
-  final String title;
+  const EmployeeMaster({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Responsive.isMobile(context) || Responsive.isSmallerPhone(context)
         ? const EmployeeMasterMobile()
         : Responsive.isTablet(context)
             ? const EmployeeMasterTab()
-            : EmployeeMasterLap(title: title);
+            : const EmployeeMasterLap();
   }
 }

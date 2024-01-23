@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
+import 'package:fosrams_web/constants/decoration.dart';
 import 'package:fosrams_web/constants/functions.dart';
 import 'package:fosrams_web/constants/style.dart';
 import 'package:fosrams_web/controllers/textfield_controller.dart';
 import 'package:fosrams_web/model/master_model/employee_table_model.dart';
 import 'package:fosrams_web/widgets/master_data_widgets/lap_widgets/table_employee.dart';
-import 'package:fosrams_web/widgets/template_widgets/pop_up.dart';
+import 'package:fosrams_web/widgets/master_data_widgets/create_master_dat_pop_up.dart';
 import 'package:fosrams_web/widgets/user_authentication_widgets/loginpage/textfield_widget.dart';
 import 'package:provider/provider.dart';
 
 class EmployeeMasterLap extends StatelessWidget {
-  const EmployeeMasterLap({super.key, required this.title});
-  final String title;
+  const EmployeeMasterLap({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Text(title, style: AppStyles.extraBig(context)),
-      const SizedBox(height: 50),
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const SizedBox(height: 30),
       Align(
           alignment: Alignment.centerRight,
           child: Container(
@@ -44,23 +44,32 @@ class EmployeeMasterLap extends StatelessWidget {
                                 context: context, color: Colors.white))
                       ])))),
       SizedBox(height: getScreenHeight(context) * .04),
-      Expanded(
-        child: ListView.builder(
-            itemCount: employeeModelList.length,
-            itemBuilder: (context, index) => BuildTableEmployee(
-                name: employeeModelList[index].name,
-                email: employeeModelList[index].email,
-                number: employeeModelList[index].number,
-                index: index,
-                logInTime: employeeModelList[index].logInTime,
-                logOutTime: employeeModelList[index].logOutTime,
-                duration: employeeModelList[index].duration)),
+      Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            boxShadow: [AppDecoration.smallShadow],
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20)),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Column(children: [
+            for (int index = 0; index < employeeModelList.length; index++)
+              BuildTableEmployeeLap(
+                  name: employeeModelList[index].name,
+                  email: employeeModelList[index].email,
+                  number: employeeModelList[index].number,
+                  index: index,
+                  logInTime: employeeModelList[index].logInTime,
+                  logOutTime: employeeModelList[index].logOutTime,
+                  duration: employeeModelList[index].duration)
+          ]),
+        ),
       )
     ]);
   }
 
   bottomSheet(BuildContext context) {
-    buildShowDialog(
+    buildCreateMasterDataShowDialog(
         context: context,
         title: 'Create Employee',
         child:

@@ -8,8 +8,13 @@ double getScreenHeight(BuildContext context) {
   return MediaQuery.of(context).size.height;
 }
 
-class AppAssets {
-  static const apiKey = 'AIzaSyAtg3YbaobDcUtPHO-3hwHi4C0ibVzIeq4';
+class AppImages {
+  static const String imgIcon = 'assets/images/app_icon.png';
+  static const String imgProfile = 'assets/images/profile.png';
+  static const String imgDefaultProfile = 'assets/images/profile_default.png';
+}
+
+class AppIcons {
   static const String iconTimeCalendarFilled = 'assets/icons/timetable.png';
   static const String iconTimeCalendarOutline =
       'assets/icons/timetable_(1).png';
@@ -19,12 +24,16 @@ class AppAssets {
   static const String iconHomeOutline = 'assets/icons/home_(1).png';
   static const String iconChronometer = 'assets/icons/chronometer.png';
   static const String iconCalendar = 'assets/icons/calendar.png';
-  static const String imgIcon = 'assets/images/app_icon.png';
-  static const String imgProfile = 'assets/images/profile.png';
   static const String iconDashboardOutlined =
       'assets/icons/dashboard_outlined.png';
   static const String iconMasterDataOutlined =
       'assets/icons/master_data_outlined.png';
   static const String iconDashboard = 'assets/icons/dashboard.png';
   static const String iconMasterData = 'assets/icons/master_data.png';
+  static const String iconSettings = 'assets/icons/settings.png';
+  static const String iconNotification = 'assets/icons/notification.png';
+}
+
+class AppAssets {
+  static const apiKey = 'AIzaSyAtg3YbaobDcUtPHO-3hwHi4C0ibVzIeq4';
 }

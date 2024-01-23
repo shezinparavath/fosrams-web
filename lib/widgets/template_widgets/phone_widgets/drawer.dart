@@ -17,22 +17,27 @@ class BuildDrawer extends StatelessWidget {
       child: const Column(children: [
         SizedBox(height: 30),
         TemplateCard(
-            image: AppAssets.iconDashboardOutlined,
+            image: AppIcons.iconDashboardOutlined,
             title: 'Dashboard',
             index: 0,
             child: SizedBox()),
         TemplateCard(
-            image: AppAssets.iconMasterDataOutlined,
+            image: AppIcons.iconMasterDataOutlined,
             title: 'Master Data',
             index: 1,
             child: Column(children: [
-              BuildDropDown(title: 'User Master', route: AppRoutes.masterUser),
+              BuildDropDown(
+                  title: 'User Master', route: AppRoutes.masterUser, index: 1),
               SizedBox(height: 10),
               BuildDropDown(
-                  title: 'Employee Master', route: AppRoutes.masterEmployee),
+                  title: 'Employee Master',
+                  route: AppRoutes.masterEmployee,
+                  index: 2),
               SizedBox(height: 10),
               BuildDropDown(
-                  title: 'Timesheet Master', route: AppRoutes.masterTimesheet)
+                  title: 'Timesheet Master',
+                  route: AppRoutes.masterTimesheet,
+                  index: 3)
             ]))
       ]));
 }

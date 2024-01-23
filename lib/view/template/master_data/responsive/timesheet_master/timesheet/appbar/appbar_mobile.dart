@@ -21,7 +21,7 @@ PreferredSizeWidget buildAppBarMobile(BuildContext context) {
           titleSpacing: 0,
           iconTheme: const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
-          title: Image.asset(AppAssets.imgIcon,
+          title: Image.asset(AppImages.imgIcon,
               fit: BoxFit.contain,
               width: Responsive.isMobile(context) ? 70 : 60,
               height: Responsive.isMobile(context) ? 30 : 20),
@@ -30,7 +30,7 @@ PreferredSizeWidget buildAppBarMobile(BuildContext context) {
               child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                 CircleAvatar(
                     radius: getScreenWidth(context) * .05,
-                    backgroundImage: const AssetImage(AppAssets.imgProfile)),
+                    backgroundImage: const AssetImage(AppImages.imgProfile)),
                 const SizedBox(width: 10),
                 Center(
                     child: Text('Kalyan Bajwa',

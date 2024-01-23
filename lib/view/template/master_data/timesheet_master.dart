@@ -5,12 +5,12 @@ import 'package:fosrams_web/view/template/master_data/responsive/timesheet_maste
 import 'responsive/timesheet_master/timesheet_master_mobile.dart';
 
 class TimeSheetMaster extends StatelessWidget {
-  const TimeSheetMaster({super.key, required this.title});
-  final String title;
+  const TimeSheetMaster({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Responsive.isDesktop(context) || Responsive.isTablet(context)
-        ? TimesheetMasterLapAndTab(title: title)
+        ? const TimesheetMasterLapAndTab()
         : const TimeSheetMasterMobile();
   }
 }

@@ -3,8 +3,7 @@ import 'package:fosrams_web/constants/assets.dart';
 import 'package:fosrams_web/constants/colors.dart';
 import 'package:fosrams_web/constants/style.dart';
 
-// Method to show the dialog
-void buildShowDialog(
+void buildCreateMasterDataShowDialog(
     {required BuildContext context,
     required String title,
     required Widget child}) {
